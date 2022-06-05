@@ -1,6 +1,7 @@
 version: '3'
 services:
   strapi:
+    restart: always
     image: strapi/strapi
     environment:
       DATABASE_CLIENT: mysql
@@ -20,6 +21,7 @@ services:
       - mysql
 
   mysql:
+    restart: always
     image: mysql
     platform: linux/amd64
     command: mysqld --default-authentication-plugin=mysql_native_password
